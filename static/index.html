@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#F7F6F2">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Hidden Word</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main id="join" class="panel">
+  <h1>Hidden Word</h1>
+  <p class="muted">Give hints until one lands close enough. Everyone else guesses the word you’re holding.</p>
+  <input id="name" maxlength="20" placeholder="Your name" autocomplete="nickname" autocapitalize="words" spellcheck="false">
+  <button id="join-btn" class="primary block">Join game</button>
+  <p id="join-err" class="warn" role="alert"></p>
+</main>
+
+<div id="game" hidden>
+  <header class="topbar">
+    <div class="meta"><strong id="room"></strong><span id="roundinfo" class="num muted"></span>
+      <button id="dbg" class="link" aria-pressed="false">Details off</button></div>
+    <div id="pills" class="pills"></div>
+  </header>
+  <main id="stage" class="stage">
+    <section id="banner" class="panel"></section>
+    <section id="final" class="panel" hidden></section>
+    <section id="rounds" hidden></section>
+    <section id="hints" class="panel" hidden></section>
+  </main>
+  <footer id="dock" class="dock" hidden>
+    <div id="toast" role="alert"></div>
+    <div class="handbar"><span class="muted">Your words</span><button id="hide" class="link" aria-pressed="false">Hide cards</button></div>
+    <div id="hand" class="hand"></div>
+    <div id="action"></div>
+  </footer>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
